@@ -9,7 +9,7 @@ module "vpc" {
 
 resource "aws_security_group" "ec2_sg" {
   name   = "ec2-sg"
-  vpc_id = module.vpcmodule.vpc_id
+  vpc_id = module.vpc.vpc_id
 
   ingress {
     from_port   = 22
