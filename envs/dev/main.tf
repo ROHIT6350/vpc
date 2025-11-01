@@ -42,10 +42,3 @@ module "ec2" {
   create_new_key         = true
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 }
-
-module "eks" {
-  source          = "../../modules/eks"
-  cluster_name    = "${var.name}-eks"
-  private_subnets = module.vpc.private_subnets
-  public_subnets  = module.vpc.public_subnets
-}
